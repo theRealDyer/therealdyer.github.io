@@ -23,15 +23,15 @@
       --radius: 16px;
       --shadow: none;
     }
-  
+
     * {
       box-sizing: border-box;
     }
-  
+
     html {
       scroll-behavior: smooth;
     }
-  
+
     body {
       margin: 0;
       font-family: "Space Grotesk", Arial, Helvetica, sans-serif;
@@ -39,35 +39,35 @@
       color: var(--text);
       line-height: 1.6;
     }
-  
+
     img {
       max-width: 100%;
       display: block;
     }
-  
+
     a {
       color: var(--text);
       text-decoration: underline;
       text-underline-offset: 0.15em;
     }
-  
+
     .site-wrap {
       width: min(calc(100% - 2rem), var(--max-width));
       margin: 0 auto;
       padding: 1rem 0 2.5rem;
     }
-  
+
     .hero {
       display: flex;
       justify-content: flex-start;
       margin-top: 0.5rem;
-      padding-left: 1rem;   /* lines it up with the text inside the bars/cards below */
+      padding-left: 1rem;
     }
 
     .hero img {
-      width: auto;          /* stops the image sitting inside a big 700px-wide box */
-      max-width: 100%;      /* still prevents overflow */
-      height: 160px;        /* change this to reduce/increase the image size */
+      width: auto;
+      max-width: 100%;
+      height: 160px;
       object-fit: contain;
       object-position: left center;
       border-radius: 0;
@@ -75,14 +75,14 @@
       box-shadow: none;
       background: transparent;
     }
-  
+
     .card {
       background: transparent;
       border: 0;
       border-radius: 0;
       box-shadow: none;
     }
-  
+
     .social-bar {
       margin-top: 1rem;
       background: var(--surface-alt);
@@ -90,7 +90,7 @@
       border-radius: 0;
       padding: 0.85rem 1rem;
     }
-  
+
     .social-list {
       display: flex;
       flex-wrap: wrap;
@@ -98,7 +98,7 @@
       align-items: center;
       justify-content: flex-start;
     }
-  
+
     .social-link {
       display: inline-flex;
       align-items: center;
@@ -108,14 +108,14 @@
       text-decoration: none;
       transition: transform 0.18s ease, background-color 0.18s ease;
     }
-  
+
     .social-link:hover,
     .social-link:focus-visible {
       background: rgba(255, 255, 255, 0.10);
       transform: translateY(-1px);
       outline: none;
     }
-  
+
     .social-icon {
       width: 1.7rem;
       height: 1.7rem;
@@ -135,24 +135,24 @@
       display: block;
       object-fit: contain;
     }
-  
+
     .intro {
       margin-top: 1rem;
       padding: 1.3rem 1.2rem;
     }
-  
+
     .intro h1 {
       margin: 0 0 0.5rem;
       font-size: clamp(1.8rem, 4vw, 2.7rem);
       line-height: 1.1;
     }
-  
+
     .intro p {
       margin: 0.7rem 0 0;
       color: var(--muted);
       font-size: 1.02rem;
     }
-  
+
     .section-label {
       margin: 1.3rem 0 0.8rem;
       background: var(--surface-alt);
@@ -166,11 +166,11 @@
       line-height: 1.2;
       color: var(--text);
     }
-  
+
     .link-list {
       padding: 1rem 1.1rem;
     }
-  
+
     .link-list ul {
       list-style: none;
       margin: 0;
@@ -178,28 +178,28 @@
       display: grid;
       gap: 0.9rem;
     }
-  
+
     .link-list li {
       padding-bottom: 0.9rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
-  
+
     .link-list li:last-child {
       border-bottom: 0;
       padding-bottom: 0;
     }
-  
+
     .link-list a {
       font-weight: 700;
       text-decoration: underline;
       text-underline-offset: 0.18em;
     }
-  
+
     .link-list p {
       margin: 0.3rem 0 0;
       color: var(--muted);
     }
-  
+
     .sub-links {
       list-style: none;
       margin: 0.5rem 0 0;
@@ -207,52 +207,52 @@
       display: grid;
       gap: 0.35rem;
     }
-  
+
     .feature-stack {
       display: grid;
       gap: 1rem;
     }
-  
+
     .feature-row {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
       gap: 1rem;
       align-items: stretch;
     }
-  
+
     .feature-row.reverse {
       grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
     }
-  
+
     .feature-row.reverse .feature-copy {
       order: 2;
     }
-  
+
     .feature-row.reverse .feature-image {
       order: 1;
     }
-  
+
     .feature-copy {
       padding: 1.2rem;
       min-width: 0;
     }
-  
+
     .feature-copy h3 {
       margin: 0 0 0.45rem;
       font-size: 1.35rem;
       line-height: 1.2;
       color: var(--text);
     }
-  
+
     .feature-copy p {
       margin: 0 0 0.8rem;
       color: var(--muted);
     }
-  
+
     .feature-copy p:last-child {
       margin-bottom: 0;
     }
-  
+
     .feature-image img {
       width: 100%;
       aspect-ratio: 4 / 3;
@@ -264,7 +264,7 @@
       background: transparent;
       box-shadow: none;
     }
-  
+
     .footer {
       margin-top: 1.5rem;
       padding: 1rem 0 0.25rem;
@@ -272,17 +272,17 @@
       color: var(--muted);
       font-size: 0.92rem;
     }
-  
+
     .footer p {
       margin: 0.35rem 0;
     }
-  
+
     @media (max-width: 760px) {
       .site-wrap {
         width: min(calc(100% - 1rem), var(--max-width));
         padding-top: 0.5rem;
       }
-  
+
       .hero {
         padding-left: 1rem;
       }
@@ -291,23 +291,23 @@
         height: 140px;
         border-radius: 0;
       }
-  
+
       .intro,
       .link-list,
       .feature-copy {
         padding: 1rem;
       }
-  
+
       .feature-row,
       .feature-row.reverse {
         grid-template-columns: 1fr;
       }
-  
+
       .feature-row.reverse .feature-copy,
       .feature-row.reverse .feature-image {
         order: initial;
       }
-  
+
       .feature-image img {
         min-height: 220px;
       }
@@ -316,12 +316,11 @@
 </head>
 <body>
   <main class="site-wrap">
-    <!-- TOP IMAGE -->
+
     <section class="hero" aria-label="Header image">
       <img src="avatar 1.png" alt="Banner image for theRealDyer portfolio" />
     </section>
 
-    <!-- SOCIAL LINKS BAR -->
     <section class="social-bar" aria-label="Social links">
       <div class="social-list">
         <a class="social-link" href="mailto:dyerjt0@gmail.com" title="Email">
@@ -330,42 +329,42 @@
           </span>
           <span>dyerjt0@gmail.com</span>
         </a>
-    
+
         <a class="social-link" href="https://bsky.app/profile/therealdyer.bsky.social" target="_blank" rel="noopener noreferrer" title="Bluesky">
           <span class="social-icon" aria-hidden="true">
             <img src="icons/bluesky.png" alt="">
           </span>
           <span>therealdyer.bsky.social</span>
         </a>
-    
+
         <a class="social-link" href="https://therealdyer.itch.io" target="_blank" rel="noopener noreferrer" title="Itch.io">
           <span class="social-icon" aria-hidden="true">
             <img src="icons/itch.png" alt="">
           </span>
           <span>therealdyer.itch.io</span>
         </a>
-    
+
         <a class="social-link" href="https://www.twitch.tv/theRealDyer" target="_blank" rel="noopener noreferrer" title="Twitch">
           <span class="social-icon" aria-hidden="true">
             <img src="icons/twitch.png" alt="">
           </span>
           <span>theRealDyer</span>
         </a>
-    
+
         <a class="social-link" href="https://www.youtube.com/@therealdyer" target="_blank" rel="noopener noreferrer" title="YouTube">
           <span class="social-icon" aria-hidden="true">
             <img src="icons/youtube.png" alt="">
           </span>
           <span>theRealDyer</span>
         </a>
-    
+
         <a class="social-link" href="https://github.com/theRealDyer" target="_blank" rel="noopener noreferrer" title="GitHub">
           <span class="social-icon" aria-hidden="true">
             <img src="icons/github.png" alt="">
           </span>
           <span>theRealDyer</span>
         </a>
-    
+
         <a class="social-link" target="_blank" rel="noopener noreferrer" title="Discord">
           <span class="social-icon" aria-hidden="true">
             <img src="icons/discord.png" alt="">
@@ -375,7 +374,6 @@
       </div>
     </section>
 
-    <!-- INTRODUCTION -->
     <section class="intro card" aria-labelledby="intro-title">
       <h1 id="intro-title">theRealDyer</h1>
       <p>
@@ -390,9 +388,6 @@
       </p>
     </section>
 
-
-
-    <!-- SECTION 2 -->
     <div class="section-label">Featured Games</div>
     <section class="feature-stack" aria-label="Featured projects">
       <article class="feature-row">
@@ -411,7 +406,7 @@
           <img src="sleeping-problem.png" alt="Preview image for project one" />
         </div>
       </article>
-    
+
       <article class="feature-row reverse">
         <div class="feature-copy card">
           <h3>The Cat Sofa Problem</h3>
@@ -430,7 +425,6 @@
       </article>
     </section>
 
-    <!-- SECTION 3 -->
     <div class="section-label">Games coming soon (in active development)</div>
     <section class="feature-stack" aria-label="Featured projects">
       <article class="feature-row">
@@ -459,7 +453,7 @@
         </div>
       </article>
     </section>
-    
+
       <article class="feature-row">
         <div class="feature-copy card">
           <h3>The Tom Problem</h3>
@@ -473,7 +467,6 @@
       </article>
     </section>
 
-    <!-- SECTION 4 -->
     <div class="section-label">Featured other projects</div>
     <section class="feature-stack" aria-label="Other projects">
       <article class="feature-row">
@@ -488,7 +481,6 @@
         </div>
       </article>
 
-    <!-- SECTION 5 -->
     <div class="section-label">Other</div>
     <section class="link-list card" aria-label="Links and descriptions">
       <ul>
@@ -499,7 +491,6 @@
         </li>
       </ul>
     </section>
-
 
     <footer class="footer" aria-label="Footer">
       <p>&copy; <span id="year"></span> theRealDyer</p>
