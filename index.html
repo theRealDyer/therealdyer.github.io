@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>theRealDyer</title>
+  <meta
+    name="description"
+    content="Personal portfolio site for theRealDyer — games, projects, writing, streams, and other work."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #201713;
+      --surface: #201713;
+      --surface-alt: #8f4c2c;
+      --text: #f3efe9;
+      --muted: #d5cabe;
+      --border: #201713;
+      --max-width: 980px;
+      --radius: 16px;
+      --shadow: none;
+    }
+  
+    * {
+      box-sizing: border-box;
+    }
+  
+    html {
+      scroll-behavior: smooth;
+    }
+  
+    body {
+      margin: 0;
+      font-family: "Space Grotesk", Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+  
+    img {
+      max-width: 100%;
+      display: block;
+    }
+  
+    a {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+  
+    .site-wrap {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin: 0 auto;
+      padding: 1rem 0 2.5rem;
+    }
+  
+    .hero {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 0.5rem;
+      padding-left: 1rem;   /* lines it up with the text inside the bars/cards below */
+    }
+
+    .hero img {
+      width: auto;          /* stops the image sitting inside a big 700px-wide box */
+      max-width: 100%;      /* still prevents overflow */
+      height: 160px;        /* change this to reduce/increase the image size */
+      object-fit: contain;
+      object-position: left center;
+      border-radius: 0;
+      border: 0;
+      box-shadow: none;
+      background: transparent;
+    }
+  
+    .card {
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  
+    .social-bar {
+      margin-top: 1rem;
+      background: var(--surface-alt);
+      border: 0;
+      border-radius: 0;
+      padding: 0.85rem 1rem;
+    }
+  
+    .social-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem 1rem;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.4rem 0.65rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: transform 0.18s ease, background-color 0.18s ease;
+    }
+  
+    .social-link:hover,
+    .social-link:focus-visible {
+      background: rgba(255, 255, 255, 0.10);
+      transform: translateY(-1px);
+      outline: none;
+    }
+  
+    .social-icon {
+      width: 1.7rem;
+      height: 1.7rem;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.06);
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .social-icon img,
+    .social-icon svg {
+      width: 70%;
+      height: 70%;
+      display: block;
+      object-fit: contain;
+    }
+  
+    .intro {
+      margin-top: 1rem;
+      padding: 1.3rem 1.2rem;
+    }
+  
+    .intro h1 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.1;
+    }
+  
+    .intro p {
+      margin: 0.7rem 0 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+  
+    .section-label {
+      margin: 1.3rem 0 0.8rem;
+      background: var(--surface-alt);
+      border: 0;
+      border-radius: 0;
+      padding: 0.8rem 1rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-transform: none;
+      font-size: 1.4rem;
+      line-height: 1.2;
+      color: var(--text);
+    }
+  
+    .link-list {
+      padding: 1rem 1.1rem;
+    }
+  
+    .link-list ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.9rem;
+    }
+  
+    .link-list li {
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+  
+    .link-list li:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+  
+    .link-list a {
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+    }
+  
+    .link-list p {
+      margin: 0.3rem 0 0;
+      color: var(--muted);
+    }
+  
+    .sub-links {
+      list-style: none;
+      margin: 0.5rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 0.35rem;
+    }
+  
+    .feature-stack {
+      display: grid;
+      gap: 1rem;
+    }
+  
+    .feature-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+      gap: 1rem;
+      align-items: stretch;
+    }
+  
+    .feature-row.reverse {
+      grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
+    }
+  
+    .feature-row.reverse .feature-copy {
+      order: 2;
+    }
+  
+    .feature-row.reverse .feature-image {
+      order: 1;
+    }
+  
+    .feature-copy {
+      padding: 1.2rem;
+      min-width: 0;
+    }
+  
+    .feature-copy h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.35rem;
+      line-height: 1.2;
+      color: var(--text);
+    }
+  
+    .feature-copy p {
+      margin: 0 0 0.8rem;
+      color: var(--muted);
+    }
+  
+    .feature-copy p:last-child {
+      margin-bottom: 0;
+    }
+  
+    .feature-image img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+      border-radius: var(--radius);
+      border: 0;
+      display: block;
+      background: transparent;
+      box-shadow: none;
+    }
+  
+    .footer {
+      margin-top: 1.5rem;
+      padding: 1rem 0 0.25rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+  
+    .footer p {
+      margin: 0.35rem 0;
+    }
+  
+    @media (max-width: 760px) {
+      .site-wrap {
+        width: min(calc(100% - 1rem), var(--max-width));
+        padding-top: 0.5rem;
+      }
+  
+      .hero {
+        padding-left: 1rem;
+      }
+
+      .hero img {
+        height: 140px;
+        border-radius: 0;
+      }
+  
+      .intro,
+      .link-list,
+      .feature-copy {
+        padding: 1rem;
+      }
+  
+      .feature-row,
+      .feature-row.reverse {
+        grid-template-columns: 1fr;
+      }
+  
+      .feature-row.reverse .feature-copy,
+      .feature-row.reverse .feature-image {
+        order: initial;
+      }
+  
+      .feature-image img {
+        min-height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="site-wrap">
+    <!-- TOP IMAGE -->
+    <section class="hero" aria-label="Header image">
+      <img src="avatar 1.png" alt="Banner image for theRealDyer portfolio" />
+    </section>
+
+    <!-- SOCIAL LINKS BAR -->
+    <section class="social-bar" aria-label="Social links">
+      <div class="social-list">
+        <a class="social-link" href="mailto:dyerjt0@gmail.com" title="Email">
+          <span class="social-icon" aria-hidden="true">
+            <img src="icons/email.png" alt="">
+          </span>
+          <span>dyerjt0@gmail.com</span>
+        </a>
+    
+        <a class="social-link" href="https://bsky.app/profile/therealdyer.bsky.social" target="_blank" rel="noopener noreferrer" title="Bluesky">
+          <span class="social-icon" aria-hidden="true">
+            <img src="icons/bluesky.png" alt="">
+          </span>
+          <span>therealdyer.bsky.social</span>
+        </a>
+    
+        <a class="social-link" href="https://therealdyer.itch.io" target="_blank" rel="noopener noreferrer" title="Itch.io">
+          <span class="social-icon" aria-hidden="true">
+            <img src="icons/itch.png" alt="">
+          </span>
+          <span>therealdyer.itch.io</span>
+        </a>
+    
+        <a class="social-link" href="https://www.twitch.tv/theRealDyer" target="_blank" rel="noopener noreferrer" title="Twitch">
+          <span class="social-icon" aria-hidden="true">
+            <img src="icons/twitch.png" alt="">
+          </span>
+          <span>theRealDyer</span>
+        </a>
+    
+        <a class="social-link" href="https://www.youtube.com/@therealdyer" target="_blank" rel="noopener noreferrer" title="YouTube">
+          <span class="social-icon" aria-hidden="true">
+            <img src="icons/youtube.png" alt="">
+          </span>
+          <span>theRealDyer</span>
+        </a>
+    
+        <a class="social-link" href="https://github.com/theRealDyer" target="_blank" rel="noopener noreferrer" title="GitHub">
+          <span class="social-icon" aria-hidden="true">
+            <img src="icons/github.png" alt="">
+          </span>
+          <span>theRealDyer</span>
+        </a>
+    
+        <a class="social-link" target="_blank" rel="noopener noreferrer" title="Discord">
+          <span class="social-icon" aria-hidden="true">
+            <img src="icons/discord.png" alt="">
+          </span>
+          <span>theRealDyer</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="intro card" aria-labelledby="intro-title">
+      <h1 id="intro-title">theRealDyer</h1>
+      <p>
+        I'm James and I'm a hobbyist game developer making hand-crafted games, living in the UK.
+        I also playtest, rockclimb, occasionally stream, and enjoy all sorts of games.
+
+        All of my work is created the long, hard way, i.e., without generative AI, with a focus on handmade design, writing, and development.
+        <br>
+        <br>
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="theRealDyer"
+        data-color="#8f4c2c" data-emoji="☕"  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#ffffff" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+      </p>
+    </section>
+
+
+
+    <!-- SECTION 2 -->
+    <div class="section-label">Featured Games</div>
+    <section class="feature-stack" aria-label="Featured projects">
+      <article class="feature-row">
+        <div class="feature-copy card">
+          <h3>The Sleeping Problem</h3>
+          <p>
+            A short (~5 mins), atmospheric, audio-visual, horror experience about trying to sleep. But something lurks from inside the closet...
+          </p>
+          <p>
+            <a href="https://therealdyer.itch.io/the-sleeping-problem" target="_blank" rel="noopener noreferrer">
+              itch.io
+            </a>
+          </p>
+        </div>
+        <div class="feature-image">
+          <img src="sleeping-problem.png" alt="Preview image for project one" />
+        </div>
+      </article>
+    
+      <article class="feature-row reverse">
+        <div class="feature-copy card">
+          <h3>The Cat Sofa Problem</h3>
+          <p>
+            Sokoban-style game about a cat and its needs to push its empty food bowl under the sofa, made in puzzlescript.
+          </p>
+          <p>
+            <a href="https://therealdyer.itch.io/the-sleeping-problem" target="_blank" rel="noopener noreferrer">
+              itch.io
+            </a>
+          </p>
+        </div>
+        <div class="feature-image">
+          <img src="cat-sofa.png" alt="Preview image for project two" />
+        </div>
+      </article>
+    </section>
+
+    <!-- SECTION 3 -->
+    <div class="section-label">Games coming soon (in active development)</div>
+    <section class="feature-stack" aria-label="Featured projects">
+      <article class="feature-row">
+        <div class="feature-copy card">
+          <h3>Coastal walking simulator</h3>
+          <p>
+            A A short 3D walking sim set in a weathered coastal cottage, being built in Godot, with a dynamic time-of-day lighting system.
+            The focus is on atmosphere, believable environments, and an immersive narrative about regret, perspective, and accountability.
+          </p>
+          Photo by XENON on <a href="https://unsplash.com/photos/small-white-building-by-the-sea-with-stream-XGiEEXPpnb4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash.</a>
+        </div>
+        <div class="feature-image">
+          <img src="coastal-cottage.jpg" alt="Preview image for project one" />
+        </div>
+      </article>
+
+      <article class="feature-row reverse">
+        <div class="feature-copy card">
+          <h3>The Poop Problem</h3>
+          <p>
+            A mature-themed 2D side-scrolling platformer where you play a trapped snail, dodging falling waves of "hazards".
+          </p>
+        </div>
+        <div class="feature-image">
+          <img src="poop-blur.png" alt="Preview image for project two" />
+        </div>
+      </article>
+    </section>
+    
+      <article class="feature-row">
+        <div class="feature-copy card">
+          <h3>The Tom Problem</h3>
+          <p>
+            A Sokoban-like grid puzzle with line-of-sight snapping movement, made in puzzlescript.
+          </p>
+        </div>
+        <div class="feature-image">
+          <img src="tom-problem.png" alt="Preview image for project two" />
+        </div>
+      </article>
+    </section>
+
+    <!-- SECTION 4 -->
+    <div class="section-label">Featured other projects</div>
+    <section class="feature-stack" aria-label="Other projects">
+      <article class="feature-row">
+        <div class="feature-copy card">
+          <h3>What movie characters are you the same age as?</h3>
+          <p>
+            Realise the passing of time by finding out you're the same age as the dad in "My Girl".
+          </p>
+        </div>
+        <div class="feature-image">
+          <img src="movie-age.png" alt="Preview image for project one" />
+        </div>
+      </article>
+
+    <!-- SECTION 5 -->
+    <div class="section-label">Other</div>
+    <section class="link-list card" aria-label="Links and descriptions">
+      <ul>
+        <li>
+          <p>Selected playtesting credits</p>
+            <div><a href="https://store.steampowered.com/app/3831080/Oeuf/" target="_blank" rel="noopener noreferrer">Oeuf</a></div>
+            <div><a href="https://store.steampowered.com/app/3989530/Reconfigure/" target="_blank" rel="noopener noreferrer">Reconfigure</a></div>
+        </li>
+      </ul>
+    </section>
+
+
+    <footer class="footer" aria-label="Footer">
+      <p>&copy; <span id="year"></span> theRealDyer</p>
+      <p>Built with plain HTML and CSS for GitHub Pages.</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
