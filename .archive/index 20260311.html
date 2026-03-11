@@ -99,14 +99,21 @@
       justify-content: flex-start;
     }
 
-    .social-link.icon-only {
-      padding: 0.35rem;
-      gap: 0;
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.4rem 0.65rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: transform 0.18s ease, background-color 0.18s ease;
     }
 
-    .social-link.icon-only .social-icon {
-      width: 2rem;
-      height: 2rem;
+    .social-link:hover,
+    .social-link:focus-visible {
+      background: rgba(255, 255, 255, 0.10);
+      transform: translateY(-1px);
+      outline: none;
     }
 
     .social-icon {
@@ -316,46 +323,53 @@
 
     <section class="social-bar" aria-label="Social links">
       <div class="social-list">
-        <a class="social-link icon-only" href="mailto:dyerjt0@gmail.com" title="Email" aria-label="Email">
+        <a class="social-link" href="mailto:dyerjt0@gmail.com" title="Email">
           <span class="social-icon" aria-hidden="true">
             <img src="icons/email.png" alt="">
           </span>
+          <span>dyerjt0@gmail.com</span>
         </a>
-    
-        <a class="social-link icon-only" href="https://bsky.app/profile/therealdyer.bsky.social" target="_blank" rel="noopener noreferrer" title="Bluesky" aria-label="Bluesky">
+
+        <a class="social-link" href="https://bsky.app/profile/therealdyer.bsky.social" target="_blank" rel="noopener noreferrer" title="Bluesky">
           <span class="social-icon" aria-hidden="true">
             <img src="icons/bluesky.png" alt="">
           </span>
+          <span>therealdyer.bsky.social</span>
         </a>
-    
-        <a class="social-link icon-only" href="https://therealdyer.itch.io" target="_blank" rel="noopener noreferrer" title="Itch.io" aria-label="Itch.io">
+
+        <a class="social-link" href="https://therealdyer.itch.io" target="_blank" rel="noopener noreferrer" title="Itch.io">
           <span class="social-icon" aria-hidden="true">
             <img src="icons/itch.png" alt="">
           </span>
+          <span>therealdyer.itch.io</span>
         </a>
-    
-        <a class="social-link icon-only" href="https://www.twitch.tv/theRealDyer" target="_blank" rel="noopener noreferrer" title="Twitch" aria-label="Twitch">
+
+        <a class="social-link" href="https://www.twitch.tv/theRealDyer" target="_blank" rel="noopener noreferrer" title="Twitch">
           <span class="social-icon" aria-hidden="true">
             <img src="icons/twitch.png" alt="">
           </span>
+          <span>theRealDyer</span>
         </a>
-    
-        <a class="social-link icon-only" href="https://www.youtube.com/@therealdyer" target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="YouTube">
+
+        <a class="social-link" href="https://www.youtube.com/@therealdyer" target="_blank" rel="noopener noreferrer" title="YouTube">
           <span class="social-icon" aria-hidden="true">
             <img src="icons/youtube.png" alt="">
           </span>
+          <span>theRealDyer</span>
         </a>
-    
-        <a class="social-link icon-only" href="https://github.com/theRealDyer" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
+
+        <a class="social-link" href="https://github.com/theRealDyer" target="_blank" rel="noopener noreferrer" title="GitHub">
           <span class="social-icon" aria-hidden="true">
             <img src="icons/github.png" alt="">
           </span>
+          <span>theRealDyer</span>
         </a>
-    
-        <a class="social-link icon-only" target="_blank" rel="noopener noreferrer" title="Discord" aria-label="Discord">
+
+        <a class="social-link" target="_blank" rel="noopener noreferrer" title="Discord">
           <span class="social-icon" aria-hidden="true">
             <img src="icons/discord.png" alt="">
           </span>
+          <span>theRealDyer</span>
         </a>
       </div>
     </section>
