@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>theRealDyer | Akari Sequence</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="page-header">
+        <a class="back-link" href="../index.html">← Back to portfolio</a>
+        <h1 id="puzzle-title">Puzzle 1</h1>
+      
+        <div class="rules">
+          <p><strong>Light Up rules:</strong></p>
+          <ul>
+            <li>Place bulbs so every white square is lit.</li>
+            <li>Bulbs cannot see each other in a row or column unless blocked by a black square.</li>
+            <li>Numbered black squares must touch exactly that many bulbs.</li>
+          </ul>
+      
+          <p><strong>Controls:</strong></p>
+          <ul>
+            <li>Left click to place/remove light bulb.</li>
+            <li>Right click to rule out a space with an "X".</li>
+          </ul>
+        </div>
+      </header>
+      
+      <section id="progress" class="progress" aria-label="Puzzle progress"></section>
+      
+      <section class="toolbar" aria-label="Puzzle tools">
+        <div class="action-group">
+          <button type="button" id="undo-move">Undo last move</button>
+          <button type="button" id="reset-board">Reset current puzzle</button>
+          <button type="button" id="clear-progress">Clear all progress</button>
+        </div>
+      </section>
+      
+      <section class="game-area">
+        <div id="board-shell" class="board-shell">
+          <div id="board-wrap" class="board-wrap">
+            <div id="board" class="board" aria-label="Akari puzzle board"></div>
+      
+            <div id="board-overlay" class="board-overlay hidden" aria-hidden="true">
+              <img
+                id="board-overlay-image"
+                class="board-overlay-image"
+                src="assets/final-pixel.png"
+                alt="Final pixel-art image"
+              />
+            </div>
+          </div>
+      
+          <div class="board-actions">
+            <button type="button" id="next-button" class="hidden">Continue</button>
+          </div>
+        </div>
+      
+        <section id="merge-scene" class="merge-scene hidden" aria-live="polite">
+            <div class="merge-stage">
+              <div id="merge-grid" class="merge-grid"></div>
+              <button type="button" id="start-final">Start final puzzle</button>
+            </div>
+          </section>
+      </section>
+
+    <section id="final-reveal" class="final-reveal hidden" aria-live="polite">
+      <h2>Complete</h2>
+      <p>The full image is revealed.</p>
+      <div class="reveal-stack">
+        <div id="final-solved-board" class="final-board-preview"></div>
+        <img
+          id="final-image"
+          class="final-image"
+          src="assets/final-pixel.png"
+          alt="Final pixel-art image"
+        />
+      </div>
+    </section>
+
+    <audio id="bulb-sound" preload="auto">
+        <source src="assets/bulb.mp3" type="audio/mpeg">
+      </audio>
+      
+      <audio id="mark-sound" preload="auto">
+        <source src="assets/mark.mp3" type="audio/mpeg">
+      </audio>
+      
+      <audio id="merge-sound" preload="auto">
+        <source src="assets/merge.mp3" type="audio/mpeg">
+      </audio>
+      
+      <audio id="final-reveal-sound" preload="auto">
+        <source src="assets/kirby-sound.mp3" type="audio/mpeg">
+      </audio>
+
+      <audio id="puzzle-complete-sound" preload="auto">
+        <source src="assets/puzzle-complete.mp3" type="audio/mpeg">
+      </audio>
+    
+  </main>
+
+  <script src="puzzles.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
