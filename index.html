@@ -19,6 +19,7 @@
       --text: #f3efe9;
       --muted: #d5cabe;
       --border: #201713;
+      --line: rgba(255, 255, 255, 0.12);
       --max-width: 980px;
       --radius: 16px;
       --shadow: none;
@@ -270,6 +271,106 @@
       margin: 0.35rem 0;
     }
 
+    .newsletter-box {
+      margin-top: 0rem;
+      padding: 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .newsletter-box h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    .newsletter-box p {
+      margin: 0.4rem 0 0;
+      color: var(--muted);
+    }
+
+    .newsletter-form {
+      margin-top: 1rem;
+    }
+
+    .newsletter-label {
+      display: block;
+      margin-bottom: 0.6rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .newsletter-form-row {
+      display: flex;
+      gap: 0.75rem;
+      align-items: stretch;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .newsletter-input {
+      flex: 1 1 320px;
+      max-width: 420px;
+      padding: 0.9rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: var(--surface-alt);
+      color: var(--text);
+      font: inherit;
+    }
+
+    .newsletter-input::placeholder {
+      color: rgba(243, 239, 233, 0.72);
+    }
+
+    .newsletter-button {
+      padding: 0.9rem 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .newsletter-button:hover,
+    .newsletter-button:focus-visible {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .credit-image-links {
+      display: grid;
+      gap: 1rem;
+      margin-top: 0.8rem;
+    }
+
+    .credit-image-link {
+      display: block;
+      text-decoration: none;
+    }
+
+    .credit-image-link img {
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .credit-image-link:hover img,
+    .credit-image-link:focus-visible img {
+      opacity: 0.9;
+    }
+
+    .feature-image a {
+      display: block;
+    }
+
+    .feature-image a:hover img,
+    .feature-image a:focus-visible img {
+      opacity: 0.9;
+    }
+
     @media (max-width: 760px) {
       .site-wrap {
         width: min(calc(100% - 1rem), var(--max-width));
@@ -313,7 +414,7 @@
   <main class="site-wrap">
 
     <section class="hero" aria-label="Header image">
-      <img src="avatar 1.png" alt="Banner image for theRealDyer portfolio" />
+      <img src="images/avatar.png" alt="Banner image for theRealDyer portfolio" />
     </section>
 
     <section class="social-bar" aria-label="Social links">
@@ -323,37 +424,37 @@
             <img src="icons/email.png" alt="">
           </span>
         </a>
-    
+
         <a class="social-link icon-only" href="https://bsky.app/profile/therealdyer.bsky.social" target="_blank" rel="noopener noreferrer" title="Bluesky" aria-label="Bluesky">
           <span class="social-icon" aria-hidden="true">
             <img src="icons/bluesky.png" alt="">
           </span>
         </a>
-    
+
         <a class="social-link icon-only" href="https://therealdyer.itch.io" target="_blank" rel="noopener noreferrer" title="Itch.io" aria-label="Itch.io">
           <span class="social-icon" aria-hidden="true">
             <img src="icons/itch.png" alt="">
           </span>
         </a>
-    
+
         <a class="social-link icon-only" href="https://www.twitch.tv/theRealDyer" target="_blank" rel="noopener noreferrer" title="Twitch" aria-label="Twitch">
           <span class="social-icon" aria-hidden="true">
             <img src="icons/twitch.png" alt="">
           </span>
         </a>
-    
+
         <a class="social-link icon-only" href="https://www.youtube.com/@therealdyer" target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="YouTube">
           <span class="social-icon" aria-hidden="true">
             <img src="icons/youtube.png" alt="">
           </span>
         </a>
-    
+
         <a class="social-link icon-only" href="https://github.com/theRealDyer" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
           <span class="social-icon" aria-hidden="true">
             <img src="icons/github.png" alt="">
           </span>
         </a>
-    
+
         <a class="social-link icon-only" target="_blank" rel="noopener noreferrer" title="Discord" aria-label="Discord">
           <span class="social-icon" aria-hidden="true">
             <img src="icons/discord.png" alt="">
@@ -373,7 +474,7 @@
         <br>
         <br>
         <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="theRealDyer"
-        data-color="#8f4c2c" data-emoji="☕"  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#ffffff" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+        data-color="#8f4c2c" data-emoji="☕" data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#ffffff" data-font-color="#ffffff" data-coffee-color="#FFDD00"></script>
       </p>
     </section>
 
@@ -392,7 +493,9 @@
           </p>
         </div>
         <div class="feature-image">
-          <img src="sleeping-problem.png" alt="Preview image for project one" />
+          <a href="https://therealdyer.itch.io/the-sleeping-problem" target="_blank" rel="noopener noreferrer" aria-label="The Sleeping Problem on itch.io">
+            <img src="images/sleeping-problem.png" alt="Preview image for The Sleeping Problem" />
+          </a>
         </div>
       </article>
 
@@ -409,7 +512,9 @@
           </p>
         </div>
         <div class="feature-image">
-          <img src="cat-sofa.png" alt="Preview image for project two" />
+          <a href="https://therealdyer.itch.io/the-cat-sofa-problem" target="_blank" rel="noopener noreferrer" aria-label="The Cat Sofa Problem on itch.io">
+            <img src="images/cat-sofa.png" alt="Preview image for The Cat Sofa Problem" />
+          </a>
         </div>
       </article>
 
@@ -424,7 +529,9 @@
           </p>
         </div>
         <div class="feature-image">
-          <img src="akari.png" alt="Preview image for project two" />
+          <a href="puzzle/index.html" aria-label="Play Light Up (Akari)">
+            <img src="images/akari.gif" alt="Preview image for Light Up (Akari)" />
+          </a>
         </div>
       </article>
     </section>
@@ -438,10 +545,12 @@
             A A short 3D walking sim set in a weathered coastal cottage, being built in Godot, with a dynamic time-of-day lighting system.
             The focus is on atmosphere, believable environments, and an immersive narrative about regret, perspective, and accountability.
           </p>
-          Photo by XENON on <a href="https://unsplash.com/photos/small-white-building-by-the-sea-with-stream-XGiEEXPpnb4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash.</a>
+          <p>
+            Photo by XENON on <a href="https://unsplash.com/photos/small-white-building-by-the-sea-with-stream-XGiEEXPpnb4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>.
+          </p>
         </div>
         <div class="feature-image">
-          <img src="coastal-cottage.jpg" alt="Preview image for project one" />
+          <img src="images/coastal-cottage.jpg" alt="Preview image for coastal walking simulator" />
         </div>
       </article>
 
@@ -449,14 +558,13 @@
         <div class="feature-copy card">
           <h3>The Poop Problem</h3>
           <p>
-            A mature-themed 2D side-scrolling platformer where you play a trapped snail, dodging falling waves of "hazards".
+            A mature-themed, 2D side-scrolling platformer where you play as a trapped snail, dodging falling waves of "hazards".
           </p>
         </div>
         <div class="feature-image">
-          <img src="poop-blur.png" alt="Preview image for project two" />
+          <img src="images/poop-blur.png" alt="Preview image for The Poop Problem" />
         </div>
       </article>
-    </section>
 
       <article class="feature-row">
         <div class="feature-copy card">
@@ -466,7 +574,7 @@
           </p>
         </div>
         <div class="feature-image">
-          <img src="tom-problem.png" alt="Preview image for project two" />
+          <img src="images/tom-problem.png" alt="Preview image for The Tom Problem" />
         </div>
       </article>
     </section>
@@ -479,21 +587,113 @@
           <p>
             Realise the passing of time by finding out you're the same age as the dad in "My Girl".
           </p>
+          <p>
+            <a href="https://therealdyer.itch.io/what-movie-character-are-you-the-same-age-as" target="_blank" rel="noopener noreferrer">
+              itch.io
+            </a>
+          </p>
         </div>
         <div class="feature-image">
-          <img src="movie-age.png" alt="Preview image for project one" />
+          <a href="https://therealdyer.itch.io/what-movie-character-are-you-the-same-age-as" target="_blank" rel="noopener noreferrer" aria-label="Movie character">
+            <img src="images/movie-age.png" alt="Preview image for movie age project" />
+          </a>
         </div>
       </article>
+
+      <article class="feature-row reverse">
+        <div class="feature-copy card">
+          <h3>Ads-free Jazz FM Spotify Playlist</h3>
+          <p>
+            A Spotify playlist of the 2,000 most recent songs played on the UK radio station Jazz FM.
+          </p>
+          <p>
+            <a href="https://open.spotify.com/playlist/042LECUXiPSAGtfi6U1SgC" target="_blank" rel="noopener noreferrer">
+              Spotify
+            </a>
+          </p>
+        </div>
+        <div class="feature-image">
+          <a href="https://open.spotify.com/playlist/042LECUXiPSAGtfi6U1SgC" target="_blank" rel="noopener noreferrer" aria-label="Jazz FM on Spotify">
+            <img src="images/jazz.png" alt="Preview image for Jazz FM project" />
+          </a>
+        </div>
+      </article>
+
+    </section>
 
     <div class="section-label">Other</div>
     <section class="link-list card" aria-label="Links and descriptions">
       <ul>
         <li>
           <h3>Selected playtesting credits</h3>
-            <div><a href="https://store.steampowered.com/app/3831080/Oeuf/" target="_blank" rel="noopener noreferrer">Oeuf</a></div>
-            <div><a href="https://store.steampowered.com/app/3989530/Reconfigure/" target="_blank" rel="noopener noreferrer">Reconfigure</a></div>
+          <h4><i>(Games I am credited as a playtester on)</i></h4>
+
+          <div class="credit-image-links">
+            <a
+              class="credit-image-link"
+              href="https://store.steampowered.com/app/3831080/Oeuf/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Oeuf on Steam"
+            >
+              <img src="images/oeuf.jpg" alt="Oeuf" />
+            </a>
+
+            <a
+              class="credit-image-link"
+              href="https://store.steampowered.com/app/3989530/Reconfigure/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Reconfigure on Steam"
+            >
+              <img src="images/reconfigure.jpg" alt="Reconfigure" />
+            </a>
+
+            <a
+              class="credit-image-link"
+              href="https://store.steampowered.com/app/4284670/Would_You_Love_Me_If_I_Was_a_Snake/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Would You Love Me If I Was a Snake on Steam"
+            >
+              <img src="images/wylmiiwas.jpg" alt="Would You Love Me If I Was a Snake" />
+            </a>
+          </div>
         </li>
       </ul>
+    </section>
+
+    <div class="section-label">Newsletter signup</div>
+    <section class="newsletter-box" aria-label="Newsletter signup">
+      <h3>A wildly sporadic frequency of updates, direct to you.</h3>
+
+      <form
+        action="https://buttondown.com/api/emails/embed-subscribe/therealdyer"
+        method="post"
+        class="newsletter-form"
+        target="popupwindow"
+        onsubmit="window.open('https://buttondown.com/therealdyer', 'popupwindow')"
+      >
+        <div class="newsletter-form-row">
+          <input
+            id="bd-email"
+            type="email"
+            name="email"
+            class="newsletter-input"
+            placeholder="you@example.com"
+            required
+          />
+          <input type="hidden" name="embed" value="1" />
+          <button type="submit" class="newsletter-button">Sign up</button>
+        </div>
+        <br>
+        <p class="newsletter-note">
+          By subscribing, you show your love for my projects and help keep me motivated to create new ones.
+        </p>
+        <p>
+          They won't be often, but they will be direct to you, and free from the noise and interference of social media algorithms.
+        </p>
+      </form>
     </section>
 
     <footer class="footer" aria-label="Footer">
