@@ -214,15 +214,15 @@
       align-items: stretch;
     }
 
-    .feature-row.reverse {
+    .feature-stack > .feature-row:nth-child(even) {
       grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
     }
 
-    .feature-row.reverse .feature-copy {
+    .feature-stack > .feature-row:nth-child(even) .feature-copy {
       order: 2;
     }
 
-    .feature-row.reverse .feature-image {
+    .feature-stack > .feature-row:nth-child(even) .feature-image {
       order: 1;
     }
 
@@ -398,12 +398,12 @@
       }
 
       .feature-row,
-      .feature-row.reverse {
+      .feature-stack > .feature-row:nth-child(even) {
         grid-template-columns: 1fr;
       }
 
-      .feature-row.reverse .feature-copy,
-      .feature-row.reverse .feature-image {
+      .feature-stack > .feature-row:nth-child(even) .feature-copy,
+      .feature-stack > .feature-row:nth-child(even) .feature-image {
         order: initial;
       }
 
@@ -504,7 +504,7 @@
         </div>
       </article>
 
-      <article class="feature-row reverse">
+      <article class="feature-row">
         <div class="feature-copy card">
           <h3>The Cat Sofa Problem</h3>
           <p>
@@ -527,7 +527,7 @@
         <div class="feature-copy card">
           <h3>Light Up (Akari)</h3>
           <p>
-            An approachable set of 5 Light Up puzzles.
+            An approachable set of five Light Up puzzles, built from scratch using HTML, CSS and JavaScript, and running entirely within the website.
           </p>
           <p>
             <a href="puzzle/index.html">Play game</a>
@@ -559,7 +559,7 @@
         </div>
       </article>
 
-      <article class="feature-row reverse">
+      <article class="feature-row">
         <div class="feature-copy card">
           <h3>The Poop Problem</h3>
           <p>
@@ -587,7 +587,7 @@
     <div class="section-label">Featured other projects</div>
     <section class="feature-stack" aria-label="Other projects">
 
-      <article class="feature-row reverse">
+      <article class="feature-row">
         <div class="feature-copy card">
           <h3>Daily Akari Contributor</h3>
           <p>
@@ -625,7 +625,7 @@
         </div>
       </article>
 
-      <article class="feature-row reverse">
+      <article class="feature-row">
         <div class="feature-copy card">
           <h3>Ads-free Jazz FM Spotify Playlist</h3>
           <p>
